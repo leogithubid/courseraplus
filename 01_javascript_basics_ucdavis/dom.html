@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Examples</title>
+    </head>
+    <body> 
+        <h1>DOM Examples</h1>
+        <p id="one">Here is a paragraph with a unique ID</p>
+        <p class="change">Here is a paragraph</p>
+        <p>Second paragraph</p>
+        <p class="change">Third one</p>
+        <script>
+            document.getElementById('one').style.color = "red";
+            var myParagraphs = document.getElementsByTagName('p');
+            //console.log(myParagraphs);
+            /*for( var i = 0;i < myParagraphs.length;i++){
+                myParagraphs[i].style.color = "red";
+                alert('showing paragraph '+ i);
+            }*/
+            var myClass = document.getElementsByClassName('change');
+            for(var i =0; i < myClass.length; i++){
+                myClass[i].style.color = "green";
+            }
+        </script>
+    </body>
+</html>
