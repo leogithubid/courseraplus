@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Event Challenges: Challenge 27</title>
+    </head>
+    <body>
+        <h1>JavaScript Event Challenges: Challenge 27</h1>
+        <form>
+            <label>Enter a number <input type = "text"></label>
+            <input type = "submit" value = "send number">
+        </form>
+        <script>
+            var header = document.querySelector('h1');
+            var formTag = document.querySelector('form');
+            formTag.addEventListener('submit',function(event){
+                event.preventDefault();//otherwise it was going back 
+                var headerSize = document.querySelector('input').value;
+                console.log(headerSize);
+                if(headerSize){
+                    header.style.fontSize = headerSize + "px";
+                }
+                else{
+                    alert("please enter a number");
+                }
+            });
+        </script>
+    </body>
+</html>

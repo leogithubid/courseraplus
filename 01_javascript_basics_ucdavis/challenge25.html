@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Event Challenges: Challenge 25</title>
+    </head>
+    <body>
+        <h1>JavaScript Event Challenges: Challenge 25</h1>
+        <div>
+        <p>Here is a paragraph of text1</p>
+        <p>Here is a paragraph of text2</p>
+        <p>Here is a paragraph of text3</p>
+    </div>
+        <button>Add a new paragraph</button>
+        <button>Remove new paragraph</button>
+        <script>
+            //get paragraphs
+            //var text = document.querySelector('p');
+            //var paragraphs = document.querySelectorAll('p');
+            //get div
+            var div = document.querySelector('div');
+            //get button
+            //var button = document.querySelector('button');
+            var buttons = document.querySelectorAll('button');
+            //on click change color
+            /*button.onclick = function(){
+                text.style.color = 'green';
+            }*/
+            buttons[0].addEventListener('click',function(){
+                /*for( var paragraph in paragraphs){
+                    paragraph.style.color = 'green';
+                }
+                for( i = 0 ; i < paragraphs.length; i++){
+                    paragraphs[i].style.color = 'green';
+                    
+                }*/
+                //first create a p element
+                var newParagraph = document.createElement('p');
+                newParagraph.innerText = 'new paragraph';
+                div.appendChild(newParagraph);
+            });
+            buttons[1].addEventListener('click',function(){
+                var paragraphs = document.querySelectorAll('p');
+                div.removeChild(div.children[paragraphs.length - 1]);
+            })
+        </script>
+    </body>
+</html>

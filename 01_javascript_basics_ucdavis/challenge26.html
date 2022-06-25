@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Event Challenges: Challenge 26</title>
+    </head>
+    <body>
+        <h1>JavaScript Event Challenges: Challenge 26</h1>
+        <div>
+        <p>This is paragraph number 1</p>
+        </div>
+        <button>Add a new paragraph</button>
+        <button>Remove new paragraph</button>
+        <script>
+            //get paragraphs
+            //var text = document.querySelector('p');
+            //var paragraphs = document.querySelectorAll('p');
+            //get div
+            var div = document.querySelector('div');
+            //get button
+            //var button = document.querySelector('button');
+            var buttons = document.querySelectorAll('button');
+            //on click change color
+            /*button.onclick = function(){
+                text.style.color = 'green';
+            }*/
+            var count = 1;
+            buttons[0].addEventListener('click',function(){
+                /*for( var paragraph in paragraphs){
+                    paragraph.style.color = 'green';
+                }
+                for( i = 0 ; i < paragraphs.length; i++){
+                    paragraphs[i].style.color = 'green';
+                    
+                }*/
+                //first create a p element
+                count++;
+                var newParagraph = document.createElement('p');
+                newParagraph.innerText = 'new paragraph' + count ;
+                div.appendChild(newParagraph);
+            });
+            buttons[1].addEventListener('click',function(){
+                var paragraphs = document.querySelectorAll('p');
+                if(paragraphs.length == 1){
+                    alert('please dont remove last paragraph');
+                }
+                else{
+                div.removeChild(div.children[paragraphs.length - 1]);
+                }
+            });
+        </script>
+    </body>
+</html>
