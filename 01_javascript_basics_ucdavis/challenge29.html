@@ -3,52 +3,30 @@
     <head>
         <title>JavaScript Event Challenges: Challenge 28</title>
         <style>
-            body{
-                height: 300px;
-            }
-            .one{
-                background-color: beige;
-                transition: all 3s;
-            }
-            .two{
-                background-color: blueviolet;
-                transition: all 3s;
-            }            
-            .three{
-                background-color: coral;
-                transition: all 3s;
-            }  
-                      .four{
-                background-color: cornflowerblue;
-                transition: all 3s;
-            }
-            .four{
-                background-color: darkgoldenrod;
-                transition: all 3s;
-            }
+            .one {background-color: beige; transition: all 3s;}
+            .two {background-color: blueviolet; transition: all 3s;}
+            .three{background-color: coral; transition: all 3s;}
+            .four{background-color: cornflowerblue; transition: all 3s;}
+            .five{background-color: darkgoldenrod; transition: all 3s;}
         </style>
     </head>
     <body class="one">
         <h1>JavaScript Event Challenges: Challenge 29</h1>
         <p>Scroll Down!</p>
         <script>
-            var pageTop;
+            var pageTop = 0;
             var bodyTag = document.querySelector('body');
-            window.addEventListener('scroll',function(){
-                console.log("hello");
+            document.addEventListener("scroll",function(event){
+                console.log("scroll");
                 pageTop = window.pageYOffset;
+
                 switch(true){
-                    case pageTop < 500:
-                        bodyTag.className = "one";break;
-                    case pageTop < 1000:
-                        bodyTag.className = "two";break;                    
-                    case pageTop < 1500:
-                        bodyTag.className = "three";break;                    
-                    case pageTop < 2000:
-                        bodyTag.className = "four";break;                    
-                    default : 
-                        bodyTag.className = "five";break;
-                
+                    case pageTop > 50 : bodyTag.className = "one";break;
+                    case pageTop > 100 : bodyTag.className = "two";break;
+                    case pageTop > 150 : bodyTag.className = "three";break;
+                    case pageTop > 200 : bodyTag.className = "four";break;
+                    default : bodyTag.className = "five";break;
+                   
                 }
             });
         </script>
