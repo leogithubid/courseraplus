@@ -34,8 +34,6 @@ function handleFormSubmit(event){
 
 function createDestinationCard(name,location,photoUrl,description){
 
-    debugger;
-
     let card = document.createElement("div");
     card.className = "card";
 
